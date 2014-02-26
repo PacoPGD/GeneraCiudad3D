@@ -1,4 +1,7 @@
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Random;
 
@@ -130,11 +133,23 @@ public class main {
 		PrintWriter pw = null; 
 		try
 		{
+			//LIMPIAR EL FICHERO POR SI TENIA CONTENIDO
+			File f = new File("fichero.wrl");
+			f.delete();
+			try {
+			  f.createNewFile();
+			} catch (IOException ioe) {
+			  ioe.printStackTrace();
+			}
+			
+			//CREACION DE FICHERO
 			fichero = new FileWriter("fichero.wrl"); //URL del fichero generado
+			
 			pw = new PrintWriter(fichero);
   
 			//Escritura del fichero
             escribeFichero(pw);
+            fichero.close();
         } 
 		catch (Exception e) //No se ha podido escribir el fichero
         {
@@ -168,43 +183,43 @@ public class main {
 		
 		for(i=0;i<tamanioCiudad;i++)
 		{
+			//VERTICAL
 			if(matriz[i][0]==1)
 			{
 				for(j=0;j<tamanioCiudad;j++)
 				{
-						pw.println("Transform{"
+					if(matriz[i][j]==1)
+					pw.println("Transform{"
 								+ "translation "+ j +" 0 "+ i +" children[ Inline{ url \"figuras/calle.wrl\"}]}");
 				}	
 			}
 			
+			//HORIZONTAL
 			if(matriz[0][i]==1)
 			{
 				for(j=0;j<tamanioCiudad;j++)
-				{
-						pw.println("Transform{"
-								+ "rotation 0.0 1.0 0.0 1.5708 translation "+ i +" 0 "+ j +" children[ Inline{ url \"figuras/calle.wrl\"}]}");
+				{	
+					if(matriz[j][i]==1)
+					pw.println("Transform{"
+							+ "rotation 0.0 1.0 0.0 1.5708 translation "+ i +" 0 "+ j +" children[ Inline{ url \"figuras/calle.wrl\"}]}");
+					
 				}	
+			}
+			
+			//CRUCE
+			for(j=0;j<tamanioCiudad;j++)
+			{
+				if(matriz[i][j]==2)
+					pw.println("Transform{"
+							+ "translation "+ j +" 0 "+ i +" children[ Inline{ url \"figuras/calle2.wrl\"}]}");
+					
 			}
 		}
 		
-		/*
-		for(i=0;i<tamanioCiudad;i++)
-		{
-			for(j=0;j<tamanioCiudad;j++)
-			{
-				if(matriz[i][j]==1)
-				{
-					pw.println("Transform{"
-							+ "translation "+ j +" 0 "+ i +" children[ Inline{ url \"figuras/calle.wrl\"}]}");
-				}
-				if(matriz[i][j]==2)
-				{
-					pw.println("Transform{"
-							+ "translation "+ j +" 0 "+ i +" children[ Inline{ url \"figuras/calle2.wrl\"}]}");
-				}
-			}
-		}
-		 */
+
+		
+		
+
 		pw.println("Viewpoint {position "+ (tamanioCiudad/2) +" "+(tamanioCiudad*2)+" "+ (tamanioCiudad/2)+" orientation 1 0 0 -1.57 description \"arriba\"}");
 
 	}
