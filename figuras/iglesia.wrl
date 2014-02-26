@@ -1,0 +1,51 @@
+#VRML V2.0 utf8
+
+Transform {
+	translation -2.6 4 0
+	rotation 0.0 -1.0 0.0 1.5708 
+	children [
+		Transform {
+		 rotation 1.0 0.0 0.0 1.5708  
+		  children [
+			Shape { 
+			  appearance Appearance { 
+				texture ImageTexture { url [texturas/chuck.jpg] }
+			  }
+			  geometry Box { 
+				size 2 0.01 2
+			  } 
+			}
+		  ]
+		}
+	]
+}
+
+
+Transform {
+  translation 0 0 0
+  children [
+    Shape { 
+      appearance Appearance { 
+        texture ImageTexture { url [texturas/cemento.jpg] }
+      }
+      geometry Box { 
+        size 5 10 5
+      } 
+    }
+  ]
+}
+
+Transform {
+  translation 0 -2.5 5
+  children [
+    Shape { 
+      appearance Appearance { 
+        texture ImageTexture { url [texturas/cemento.jpg] }
+      }
+      geometry Box { 
+        size 5 5 10
+      } 
+    }
+  ]
+}
+      

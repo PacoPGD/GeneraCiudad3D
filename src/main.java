@@ -23,7 +23,12 @@ public class main {
 	{
 		pedirDatos();
 		construirCalles();
+		construirArboles();
+		//construirIglesia();
+		imprimirCiudad();
 		guardaFichero();
+		
+		System.exit(0);
 	}
 
 	
@@ -104,8 +109,73 @@ public class main {
 				bandera[auxiliar]=1;
 			}
 		}
+	}
+	
+	public static void construirIglesia()
+	{
+		Random r=new Random();
+		int i,j;
+		int auxiliar,auxiliar2;
+		int bandera=0;
 		
+		do
+		{
+			bandera = 0;
+			
+			do
+			{
+				auxiliar=r.nextInt(tamanioCiudad);
+				auxiliar2=r.nextInt(tamanioCiudad);
+			}while(matriz[auxiliar][auxiliar2]!=0);
+			
+			for(i=auxiliar;i<auxiliar+9 && i<tamanioCiudad;i++)
+			{
+				for(j=auxiliar2;j<auxiliar+14 && j<tamanioCiudad;j++)
+				{
+					if(matriz[i][j]==0)
+						bandera++;
+				}
+			}
 		
+			if(bandera==150)
+			{
+				for(i=auxiliar;i<auxiliar+9  && i<tamanioCiudad;i++)
+				{
+					for(j=auxiliar2;j<auxiliar+14 && j<tamanioCiudad;j++)
+					{
+						matriz[i][j]=4;
+					}
+			
+				}
+			}
+		}while(bandera!=150);
+	}
+	
+	public static void construirArboles()
+	{
+		int i,j;
+		
+		for(i=1;i<tamanioCiudad-1;i++)
+		{
+			for(j=1;j<tamanioCiudad-1;j++)
+			{
+				if(matriz[i][j]==0 && matriz[i][j-1]>0 && matriz[i][j+1]>0)
+					matriz[i][j]=3;
+				
+				if(matriz[i][j]==0 && matriz[i-1][j]>0 && matriz[i+1][j]>0)
+					matriz[i][j]=3;
+					
+			}
+			
+		}
+	}
+	
+	/***************************************************
+	Esta funcion imprime la matriz de la ciudad
+	*************************************************/
+	
+	public static void imprimirCiudad(){
+		int i,j;
 		//IMPRESION DE PRUEBA POR TERMINAL
 		for(i=0;i<tamanioCiudad;i++)
 		{
@@ -115,9 +185,7 @@ public class main {
 			}
 			System.out.println("");
 		}
-		
 	}
-	
 	
 	
 	
@@ -177,6 +245,7 @@ public class main {
 	public static void escribeFichero(PrintWriter pw)
 	{
 		int i,j;
+		int iglesia=0;
 		
 		pw.println("#VRML V2.0 utf8");
 
@@ -212,6 +281,24 @@ public class main {
 				if(matriz[i][j]==2)
 					pw.println("Transform{"
 							+ "translation "+ j +" 0 "+ i +" children[ Inline{ url \"figuras/calle2.wrl\"}]}");
+					
+			}
+			
+			//TIERRA
+			for(j=0;j<tamanioCiudad;j++)
+			{
+				if(matriz[i][j]==0)
+					pw.println("Transform{"
+							+ "translation "+ j +" 0 "+ i +" children[ Inline{ url \"figuras/tierra.wrl\"}]}");
+					
+			}
+			
+			//ARBOL
+			for(j=0;j<tamanioCiudad;j++)
+			{
+				if(matriz[i][j]==3)
+					pw.println("Transform{"
+							+ "translation "+ j +" 0.5 "+ i +" children[ Inline{ url \"figuras/tree.wrl\"}]}");
 					
 			}
 		}
