@@ -24,7 +24,7 @@ public class main {
 		pedirDatos();
 		construirCalles();
 		construirArboles();
-		//construirIglesia();
+		construirIglesia();
 		imprimirCiudad();
 		guardaFichero();
 		
@@ -128,27 +128,28 @@ public class main {
 				auxiliar2=r.nextInt(tamanioCiudad);
 			}while(matriz[auxiliar][auxiliar2]!=0);
 			
-			for(i=auxiliar;i<auxiliar+9 && i<tamanioCiudad;i++)
+			for(i=auxiliar;i<auxiliar+3 && i<tamanioCiudad;i++)
 			{
-				for(j=auxiliar2;j<auxiliar+14 && j<tamanioCiudad;j++)
+				for(j=auxiliar2;j<auxiliar2+7 && j<tamanioCiudad;j++)
 				{
 					if(matriz[i][j]==0)
 						bandera++;
 				}
 			}
 		
-			if(bandera==150)
+			if(bandera==21)
 			{
-				for(i=auxiliar;i<auxiliar+9  && i<tamanioCiudad;i++)
+				for(i=auxiliar;i<auxiliar+3  && i<tamanioCiudad;i++)
 				{
-					for(j=auxiliar2;j<auxiliar+14 && j<tamanioCiudad;j++)
+					for(j=auxiliar2;j<auxiliar2+7 && j<tamanioCiudad;j++)
 					{
 						matriz[i][j]=4;
 					}
 			
 				}
 			}
-		}while(bandera!=150);
+
+		}while(bandera!=21);
 	}
 	
 	public static void construirArboles()
@@ -301,10 +302,28 @@ public class main {
 							+ "translation "+ j +" 0.5 "+ i +" children[ Inline{ url \"figuras/tree.wrl\"}]}");
 					
 			}
+			//IGLESIA
+			for(j=0;j<tamanioCiudad;j++)
+			{
+				if(matriz[i][j]==4)
+				{
+					if(iglesia==0)
+					{
+					pw.println("Transform{"
+							+ "rotation 0.0 1.0 0.0 1.5708 translation "+ (j+1.5) +" 2.5 "+ (i+1) +" children[ Inline{ url \"figuras/iglesia.wrl\"}]}");
+					iglesia=1;
+					}
+					
+					pw.println("Transform{"
+							+ "translation "+ j +" 0 "+ i +" children[ Inline{ url \"figuras/tierra.wrl\"}]}");
+				}
+					
+			}
 		}
 		
 
-		
+		pw.println("Transform{"
+				+ "translation 0 10 0 children[ Inline{ url \"figuras/ejes.wrl\"}]}");
 		
 
 		pw.println("Viewpoint {position "+ (tamanioCiudad/2) +" "+(tamanioCiudad*2)+" "+ (tamanioCiudad/2)+" orientation 1 0 0 -1.57 description \"arriba\"}");

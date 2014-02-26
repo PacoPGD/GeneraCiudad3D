@@ -1,0 +1,138 @@
+#VRML V2.0 utf8
+
+DEF Palo Group {
+	children [
+		Transform{
+			translation 0 0 0
+			children[
+				Shape
+				{
+					appearance Appearance
+					{
+						material Material
+						{
+							emissiveColor 50.0 0.0 0.0
+						}
+					}
+					geometry Cylinder
+					{
+						height 5.0
+						radius 0.05
+					}
+				}
+			]	
+		}
+
+		Transform{
+			translation 0 3 0
+			children[
+				Shape
+				{
+					appearance Appearance
+					{
+						material Material
+						{
+							emissiveColor 50.0 0.0 0.0
+						}
+					}
+					geometry Cone
+					{
+						height 1
+						bottomRadius 0.25
+					}
+				}
+			]	
+		}
+	]
+}
+
+Transform 
+{ 
+	translation 2.5 -2.5 0 
+	rotation 0.0 0.0 -1.0 1.5708   
+	children USE Palo
+}
+
+Transform 
+{ 
+	translation 0 -2.5 -2.5 
+	rotation -1.0 0.0 0.0 1.5708   
+	children USE Palo 
+}
+
+
+Transform {
+	translation 1 1 0
+
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+        } 
+      } 
+      geometry Text {
+        string "Y"
+		
+		fontStyle FontStyle {  
+			family "TYPEWRITER",  
+			style "BOLD",  
+			size 2.0   
+			justify  "MIDDLE"           
+		}  
+		
+      } 
+    } 
+  ] 
+}
+
+Transform {
+	translation 5 -4 0
+
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+        } 
+      } 
+      geometry Text {
+        string "X"
+		
+		fontStyle FontStyle {  
+			family "TYPEWRITER",  
+			style "BOLD",  
+			size 2.0   
+			justify  "MIDDLE"           
+		}  
+		
+      } 
+    } 
+  ] 
+}
+
+Transform {
+	translation 1 -1.5 -3.5
+
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+        } 
+      } 
+      geometry Text {
+        string "Z"
+		
+		fontStyle FontStyle {  
+			family "TYPEWRITER",  
+			style "BOLD",  
+			size 2.0   
+			justify  "MIDDLE"           
+		}  
+		
+      } 
+    } 
+  ] 
+}
+
+
+
+
