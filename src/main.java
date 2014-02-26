@@ -18,14 +18,12 @@ public class main {
 	*************************************************/
 	public static void main(String[] args)
 	{
-
 		pedirDatos();
-		construirMatriz();
+		construirCalles();
 		guardaFichero();
-
-
 	}
 
+	
 	/***************************************************
 	La funcion guarda pedirDatos es la encargada de pedir al usuario la 
 	información para generar la ciudad
@@ -44,11 +42,12 @@ public class main {
 		    	JOptionPane.QUESTION_MESSAGE) );
 	}
 
+	
 	/***************************************************
-	Esta funcion construye la matriz a partir de la que se reproducirá la ciudad
+	Esta funcion construye la matriz de calles
 	
 	*************************************************/
-	public static void construirMatriz()
+	public static void construirCalles()
 	{
 		Random r=new Random();
 		int i,j;
@@ -104,8 +103,7 @@ public class main {
 		}
 		
 		
-
-
+		//IMPRESION DE PRUEBA POR TERMINAL
 		for(i=0;i<tamanioCiudad;i++)
 		{
 			for(j=0;j<tamanioCiudad;j++)
@@ -171,10 +169,15 @@ public class main {
 		{
 			for(j=0;j<tamanioCiudad;j++)
 			{
-				if(matriz[i][j]>0)
+				if(matriz[i][j]==1)
 				{
 					pw.println("Transform{"
-							+ "translation "+ j +" 0 "+ i +" children[ Inline{ url \"calle.wrl\"}]}");
+							+ "translation "+ j +" 0 "+ i +" children[ Inline{ url \"figuras/calle.wrl\"}]}");
+				}
+				if(matriz[i][j]==2)
+				{
+					pw.println("Transform{"
+							+ "translation "+ j +" 0 "+ i +" children[ Inline{ url \"figuras/calle2.wrl\"}]}");
 				}
 			}
 		}
