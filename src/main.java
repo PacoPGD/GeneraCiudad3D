@@ -1,18 +1,16 @@
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.util.Random;
+
+import javax.swing.JOptionPane;
 
 
 public class main {
 
-	//Variables declaradas como globales para no tener que pasar todas ellas mediante 
-	//las funciones
-	public static int callesHorizontal;
-	public static int callesVertical;
-	public static double calleAnchoMin;
-	public static double calleAnchoMax;
-	public static double calleSeparacionMin;
-	public static double calleSeparacionMax;
-	
+	static int tamanioCiudad;
+	static int callesHorizontal;
+	static int callesVertical;
+	static int matriz[][];
 
 
 	/***************************************************
@@ -20,19 +18,15 @@ public class main {
 	*************************************************/
 	public static void main(String[] args)
 	{
-<<<<<<< HEAD
-		pedirDatos();
 
-	    guardaFichero();
-=======
-		guardaFichero();
->>>>>>> haciendoCalles
-=======
-		System.out.println("Proyecto iniciado");
->>>>>>> parent of 47f3802... Funci√≥n b√°sica para pedir datos
+		pedirDatos();
+		construirMatriz();
+
+		//guardaFichero();
+
+
 	}
 
-<<<<<<< HEAD
 	/***************************************************
 	La funcion guarda pedirDatos es la encargada de pedir al usuario la 
 	informaciÛn para generar la ciudad
@@ -40,39 +34,92 @@ public class main {
 	*************************************************/
 	public static void pedirDatos()
 	{
-		int callesHorizontal;
-		int callesVertical;
-		
-		callesHorizontal = Integer.parseInt( JOptionPane.showInputDialog(
-			null,"Introduzca calles en horizontal","GeneraCiudad3D",
+		tamanioCiudad = Integer.parseInt( JOptionPane.showInputDialog(
+			null,"Introduzca tamanio ciudad en metros cuadrados","GeneraCiudad3D",
 	    	JOptionPane.QUESTION_MESSAGE) );
-	    	 
+		callesHorizontal = Integer.parseInt( JOptionPane.showInputDialog(
+				null,"Introduzca calles en horizontal","GeneraCiudad3D",
+		    	JOptionPane.QUESTION_MESSAGE) );
 		callesVertical = Integer.parseInt( JOptionPane.showInputDialog(
-			null,"Introduzca calles en vertical","GeneraCiudad3D",
-		    JOptionPane.QUESTION_MESSAGE) );
+				null,"Introduzca calles en vertical","GeneraCiudad3D",
+		    	JOptionPane.QUESTION_MESSAGE) );
+	}
+
+	/***************************************************
+	Esta funcion construye la matriz a partir de la que se reproducir· la ciudad
+	
+	*************************************************/
+	public static void construirMatriz()
+	{
+		Random r=new Random();
+		int i,j;
+		int auxiliar;
+		int bandera[]= new int [tamanioCiudad];
 		
-<<<<<<< HEAD
-=======
-		calleAnchoMin = Double.parseDouble( JOptionPane.showInputDialog(
-			null,"Introduzca minimo de ancho de la calle en metros","GeneraCiudad3D",
-		    JOptionPane.QUESTION_MESSAGE) );
-		    	 
-		calleAnchoMax = Double.parseDouble( JOptionPane.showInputDialog(
-			null,"Introduzca maximo de ancho de la calle en metros","GeneraCiudad3D",
-			JOptionPane.QUESTION_MESSAGE) );
+		matriz= new int[tamanioCiudad][tamanioCiudad];
 		
-		calleSeparacionMin = Double.parseDouble( JOptionPane.showInputDialog(
-			null,"Introduzca minimo de separacion entre calles en metros","GeneraCiudad3D",
-			JOptionPane.QUESTION_MESSAGE) );
-			    	 
-		calleSeparacionMax = Double.parseDouble( JOptionPane.showInputDialog(
-			null,"Introduzca maximo de separacion entre calles en metros","GeneraCiudad3D",
-			JOptionPane.QUESTION_MESSAGE) );	
->>>>>>> haciendoCalles
+		//INICIALIZACION DE VARIABLES A 0
+		for(i=0;i<tamanioCiudad;i++)
+		{
+			for(j=0;j<tamanioCiudad;j++)
+			{
+				matriz[i][j]=0;
+			}
+			bandera[i]=0;
+		}
+
+		//INTRODUCIMOS LAS CALLES EN HORIZONTAL
+		for(i=0;i<callesHorizontal;i++)
+		{
+			do
+			{
+			auxiliar=r.nextInt(tamanioCiudad);
+			}while(bandera[auxiliar]==1);
+				
+			for(j=0;j<tamanioCiudad;j++)
+			{
+				matriz[auxiliar][j]++;
+				bandera[auxiliar]=1;
+			}
+		}
+		
+		//REINICIALIZACION DE BANDERA A 0
+		for(i=0;i<tamanioCiudad;i++)
+		{
+			bandera[i]=0;
+		}
+		
+		//INTRODUCIMOS LAS CALLES EN VERTICAL
+		for(i=0;i<callesVertical;i++)
+		{
+			do
+			{
+			auxiliar=r.nextInt(tamanioCiudad);
+			}while(bandera[auxiliar]==1);
+				
+			for(j=0;j<tamanioCiudad;j++)
+			{
+				matriz[j][auxiliar]++;
+				bandera[auxiliar]=1;
+			}
+		}
+		
+		
+
+
+		for(i=0;i<tamanioCiudad;i++)
+		{
+			for(j=0;j<tamanioCiudad;j++)
+			{
+				System.out.print(matriz[i][j]);
+			}
+			System.out.println("");
+		}
+		
 	}
 	
-=======
->>>>>>> parent of 47f3802... Funci√≥n b√°sica para pedir datos
+	
+	
 	
 	/***************************************************
 	La funcion guarda fichero recoge toda la informaciÛn del programa
@@ -80,7 +127,7 @@ public class main {
 	por el visor 3D
 	
 	*************************************************/
-	public void guardaFichero()
+	public static void guardaFichero()
 	{
 		FileWriter fichero = null; 
 		PrintWriter pw = null; 
@@ -112,71 +159,12 @@ public class main {
 	}
 	
 	/***************************************************
-	La funcion preparaDistancias guarda todas las distancias entre calles y sus anchos para despues
-	pasarlas a la funciÛn que escribe el fichero
-	
-	*************************************************/
-	public static void preparaDistancias(double [] anchoCalleH, double [] separacionCalleH,double [] anchoCalleV, double [] separacionCalleV)
-	{
-		int i,j;
-
-		for(i=0;i<callesHorizontal;i++)
-		{
-			anchoCalleH[i]=0.;
-			separacionCalleH[i]=0;
-		}
-		
-		for(i=0;i<callesVertical;i++)
-		{
-			anchoCalleV[i]=0.;
-			separacionCalleV[i]=0;
-		}
-		
-		for(i=0;i<callesHorizontal;i++)
-		{
-			anchoCalleH[i]= Math.random()*(calleAnchoMax-calleAnchoMin) + calleAnchoMin;
-			
-			separacionCalleH[i]= Math.random()*(calleSeparacionMax-calleSeparacionMin) 
-								+ calleSeparacionMin+anchoCalleH[i];
-			if(i>0)
-			{
-				separacionCalleH[i]=separacionCalleH[i]+separacionCalleH[i-1];
-			}
-
-			 //System.out.println ("ancho de "+i+"= "+anchoCalle[i]);
-			// System.out.println ("separacion de "+i+"= "+separacionCalle[i]);
-		}	
-		
-		for(i=0;i<callesVertical;i++)
-		{
-			anchoCalleV[i]= Math.random()*(calleAnchoMax-calleAnchoMin) + calleAnchoMin;
-			
-			separacionCalleV[i]= Math.random()*(calleSeparacionMax-calleSeparacionMin) 
-								+ calleSeparacionMin;
-			if(i>0)
-			{
-				separacionCalleV[i]=separacionCalleV[i]+separacionCalleV[i-1];
-			}
-
-		}	
-	}
-	
-	
-	/***************************************************
 	La funcion escribeFichero escribe el fichero con los datos recogidos anteriormente
 	
 	*************************************************/
 	public static void escribeFichero(PrintWriter pw)
 	{
-		double[] anchoCalleH = new double[callesHorizontal];
-		double[] separacionCalleH = new double[callesHorizontal];
-
-		double[] anchoCalleV = new double[callesVertical];
-		double[] separacionCalleV = new double[callesVertical];
-		
 		int i;
-		
-		preparaDistancias(anchoCalleH,separacionCalleH,anchoCalleV,separacionCalleV);
 		
 		pw.println("#VRML V2.0 utf8");
 		
@@ -186,7 +174,7 @@ public class main {
 			pw.println("DEF Calle Group {"
 					+ "	children ["
 					+ "		Transform{"
-					+ "			translation " + separacionCalleH[i] +" 0 0"
+					+ "			translation 0 0 0"
 					+ "			children["
 					+ "				Shape"
 					+ "				{"
@@ -199,7 +187,7 @@ public class main {
 					+ "					}"
 					+ "					geometry Box"
 					+ "					{"
-					+ "						size " + anchoCalleH[i]+" 0.1 "+ (separacionCalleV[callesVertical-1]-anchoCalleV[callesVertical-1])
+					+ "						size 10 0.1 10"
 					+ "					}"
 					+ "				}"
 					+ "			]"
