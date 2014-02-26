@@ -164,7 +164,30 @@ public class main {
 		int i,j;
 		
 		pw.println("#VRML V2.0 utf8");
+
 		
+		for(i=0;i<tamanioCiudad;i++)
+		{
+			if(matriz[i][0]==1)
+			{
+				for(j=0;j<tamanioCiudad;j++)
+				{
+						pw.println("Transform{"
+								+ "translation "+ j +" 0 "+ i +" children[ Inline{ url \"figuras/calle.wrl\"}]}");
+				}	
+			}
+			
+			if(matriz[0][i]==1)
+			{
+				for(j=0;j<tamanioCiudad;j++)
+				{
+						pw.println("Transform{"
+								+ "rotation 0.0 1.0 0.0 1.5708 translation "+ i +" 0 "+ j +" children[ Inline{ url \"figuras/calle.wrl\"}]}");
+				}	
+			}
+		}
+		
+		/*
 		for(i=0;i<tamanioCiudad;i++)
 		{
 			for(j=0;j<tamanioCiudad;j++)
@@ -181,7 +204,7 @@ public class main {
 				}
 			}
 		}
-	
+		 */
 		pw.println("Viewpoint {position "+ (tamanioCiudad/2) +" "+(tamanioCiudad*2)+" "+ (tamanioCiudad/2)+" orientation 1 0 0 -1.57 description \"arriba\"}");
 
 	}

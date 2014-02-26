@@ -1,53 +1,102 @@
 #VRML V2.0 utf8
+Transform{translation 0 0 0 children[ Inline{ url "figuras/calle.wrl"}]}
 Transform{translation 1 0 0 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 2 0 0 children[ Inline{ url "figuras/calle.wrl"}]}
 Transform{translation 3 0 0 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 4 0 0 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 5 0 0 children[ Inline{ url "figuras/calle.wrl"}]}
 Transform{translation 6 0 0 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 1 0 1 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 3 0 1 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 6 0 1 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 1 0 2 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 3 0 2 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 6 0 2 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 0 0 3 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 1 0 3 children[ Inline{ url "figuras/calle2.wrl"}]}
-Transform{translation 2 0 3 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 3 0 3 children[ Inline{ url "figuras/calle2.wrl"}]}
-Transform{translation 4 0 3 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 5 0 3 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 6 0 3 children[ Inline{ url "figuras/calle2.wrl"}]}
-Transform{translation 7 0 3 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 8 0 3 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 9 0 3 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 0 0 4 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 1 0 4 children[ Inline{ url "figuras/calle2.wrl"}]}
-Transform{translation 2 0 4 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 3 0 4 children[ Inline{ url "figuras/calle2.wrl"}]}
-Transform{translation 4 0 4 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 5 0 4 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 6 0 4 children[ Inline{ url "figuras/calle2.wrl"}]}
-Transform{translation 7 0 4 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 8 0 4 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 9 0 4 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 0 0 5 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 1 0 5 children[ Inline{ url "figuras/calle2.wrl"}]}
-Transform{translation 2 0 5 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 3 0 5 children[ Inline{ url "figuras/calle2.wrl"}]}
-Transform{translation 4 0 5 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 5 0 5 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 6 0 5 children[ Inline{ url "figuras/calle2.wrl"}]}
-Transform{translation 7 0 5 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 8 0 5 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 9 0 5 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 7 0 0 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 8 0 0 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 9 0 0 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 0 0 0 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 0 0 1 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 0 0 2 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 0 0 3 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 0 0 4 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 0 0 5 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 0 0 6 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 0 0 7 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 0 0 8 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 0 0 9 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 1 0 0 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 1 0 1 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 1 0 2 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 1 0 3 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 1 0 4 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 1 0 5 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 1 0 6 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 1 0 7 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 1 0 8 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 1 0 9 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 2 0 0 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 2 0 1 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 2 0 2 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 2 0 3 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 2 0 4 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 2 0 5 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 2 0 6 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 2 0 7 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 2 0 8 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 2 0 9 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 5 0 0 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 5 0 1 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 5 0 2 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 5 0 3 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 5 0 4 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 5 0 5 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 5 0 6 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 5 0 7 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 5 0 8 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 5 0 9 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 0 0 6 children[ Inline{ url "figuras/calle.wrl"}]}
 Transform{translation 1 0 6 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 2 0 6 children[ Inline{ url "figuras/calle.wrl"}]}
 Transform{translation 3 0 6 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 4 0 6 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 5 0 6 children[ Inline{ url "figuras/calle.wrl"}]}
 Transform{translation 6 0 6 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 7 0 6 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 8 0 6 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 9 0 6 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 0 0 7 children[ Inline{ url "figuras/calle.wrl"}]}
 Transform{translation 1 0 7 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 2 0 7 children[ Inline{ url "figuras/calle.wrl"}]}
 Transform{translation 3 0 7 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 4 0 7 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 5 0 7 children[ Inline{ url "figuras/calle.wrl"}]}
 Transform{translation 6 0 7 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 1 0 8 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 3 0 8 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 6 0 8 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 1 0 9 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 3 0 9 children[ Inline{ url "figuras/calle.wrl"}]}
-Transform{translation 6 0 9 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 7 0 7 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 8 0 7 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{translation 9 0 7 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 7 0 0 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 7 0 1 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 7 0 2 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 7 0 3 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 7 0 4 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 7 0 5 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 7 0 6 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 7 0 7 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 7 0 8 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 7 0 9 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 8 0 0 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 8 0 1 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 8 0 2 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 8 0 3 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 8 0 4 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 8 0 5 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 8 0 6 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 8 0 7 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 8 0 8 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 8 0 9 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 9 0 0 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 9 0 1 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 9 0 2 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 9 0 3 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 9 0 4 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 9 0 5 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 9 0 6 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 9 0 7 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 9 0 8 children[ Inline{ url "figuras/calle.wrl"}]}
+Transform{rotation 0.0 1.0 0.0 1.5708 translation 9 0 9 children[ Inline{ url "figuras/calle.wrl"}]}
 Viewpoint {position 5 20 5 orientation 1 0 0 -1.57 description "arriba"}
