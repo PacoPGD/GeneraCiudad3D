@@ -21,8 +21,7 @@ public class main {
 
 		pedirDatos();
 		construirMatriz();
-
-		//guardaFichero();
+		guardaFichero();
 
 
 	}
@@ -164,41 +163,24 @@ public class main {
 	*************************************************/
 	public static void escribeFichero(PrintWriter pw)
 	{
-		int i;
+		int i,j;
 		
 		pw.println("#VRML V2.0 utf8");
 		
-		for(i=0;i<callesHorizontal;i++)
+		for(i=0;i<tamanioCiudad;i++)
 		{
-
-			pw.println("DEF Calle Group {"
-					+ "	children ["
-					+ "		Transform{"
-					+ "			translation 0 0 0"
-					+ "			children["
-					+ "				Shape"
-					+ "				{"
-					+ "					appearance Appearance"
-					+ "					{"
-					+ "						material Material"
-					+ "						{"
-					+ "							emissiveColor 50.0 0.0 0.0"
-					+ "						}"
-					+ "					}"
-					+ "					geometry Box"
-					+ "					{"
-					+ "						size 10 0.1 10"
-					+ "					}"
-					+ "				}"
-					+ "			]"
-					+ "		}"
-					+ "	]"
-					+ "}");
+			for(j=0;j<tamanioCiudad;j++)
+			{
+				if(matriz[i][j]>0)
+				{
+					pw.println("Transform{"
+							+ "translation "+ j +" 0 "+ i +" children[ Inline{ url \"calle.wrl\"}]}");
+				}
+			}
 		}
 	
+		pw.println("Viewpoint {position "+ (tamanioCiudad/2) +" "+(tamanioCiudad*2)+" "+ (tamanioCiudad/2)+" orientation 1 0 0 -1.57 description \"arriba\"}");
 
-
-		
 	}
 	
 }
