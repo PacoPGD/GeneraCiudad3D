@@ -1,51 +1,146 @@
 #VRML V2.0 utf8
+Transform{
+	scale 0.5 0.5 0.5
+	children[
+			Transform {
+			translation -2.6 3 0
+			rotation 0.0 -1.0 0.0 1.5708 
+			children [
+				Transform {
+				 rotation 1.0 0.0 0.0 1.5708  
+				  children [
+					Shape { 
+					  appearance Appearance { 
+						texture ImageTexture { url [texturas/chuck.jpg] }
+					  }
+					  geometry Box { 
+						size 4 0.01 4
+					  } 
+					}
+				  ]
+				}
+			]
+		}
 
-Transform {
-	translation -2.6 4 0
-	rotation 0.0 -1.0 0.0 1.5708 
-	children [
+
 		Transform {
-		 rotation 1.0 0.0 0.0 1.5708  
+		  translation 0 0 0
 		  children [
 			Shape { 
 			  appearance Appearance { 
-				texture ImageTexture { url [texturas/chuck.jpg] }
+				texture ImageTexture { url [texturas/cemento.jpg] }
 			  }
 			  geometry Box { 
-				size 2 0.01 2
+				size 5 10 5
 			  } 
 			}
 		  ]
 		}
+
+		Transform {
+		  translation 0 -2.5 5
+		  children [
+			Shape { 
+			  appearance Appearance { 
+				texture ImageTexture { url [texturas/cemento.jpg] }
+			  }
+			  geometry Box { 
+				size 5 5 10
+			  } 
+			}
+		  ]
+		}
+
+		Transform {
+		  translation 0 5 0
+		  children [
+			Shape { 
+			  appearance Appearance { 
+				texture ImageTexture { url [texturas/cemento.jpg] }
+			  }
+			  geometry Box { 
+				size 0.1 10 0.1
+			  } 
+			}
+		  ]
+		}
+
+		Transform {
+		  translation 0 8 0
+		  children [
+			Shape { 
+			  appearance Appearance { 
+				texture ImageTexture { url [texturas/cemento.jpg] }
+			  }
+			  geometry Box { 
+				size 0.1 0.1 5
+			  } 
+			}
+		  ]
+		}
+			 
+		Transform {
+		  translation -2.5 -3.5 0.6
+		  rotation 0.0 -1.0 0.0 1.5708 
+		  children [
+			Shape { 
+			  appearance Appearance { 
+				texture ImageTexture { url [texturas/madera.jpg] }
+			  }
+			  geometry Box { 
+				size 1 3 0.1
+			  } 
+			}
+		  ]
+		}
+
+		Transform {
+		  translation -2.5 -3.5 -0.4
+		  rotation 0.0 -1.0 0.0 1.5708 
+		  children [
+			Shape { 
+			  appearance Appearance { 
+				texture ImageTexture { url [texturas/madera.jpg] }
+			  }
+			  geometry Box { 
+				size 1 3 0.1
+			  } 
+			}
+		  ]
+		}	 	 
+
+		Transform {
+		  translation -2.5 0 0.6
+		  rotation 0.0 -1.0 0.0 1.5708 
+		  children [
+			Shape { 
+			  appearance Appearance { 
+				material Material {transparency 0.2  }
+				texture ImageTexture { url [texturas/ventana.jpg] }
+			  }
+			  geometry Box { 
+				size 1 1 0.1
+			  } 
+			}
+		  ]
+		}
+
+		Transform {
+		  translation -2.5 0 -0.5
+		  rotation 0.0 -1.0 0.0 1.5708 
+		  children [
+			Shape { 
+			  appearance Appearance { 
+				material Material {transparency 0.2  }
+				texture ImageTexture { url [texturas/ventana.jpg] }
+			  }
+			  geometry Box { 
+				size 1 1 0.1
+			  } 
+			}
+		  ]
+		}
+	
 	]
 }
 
-
-Transform {
-  translation 0 0 0
-  children [
-    Shape { 
-      appearance Appearance { 
-        texture ImageTexture { url [texturas/cemento.jpg] }
-      }
-      geometry Box { 
-        size 5 10 5
-      } 
-    }
-  ]
-}
-
-Transform {
-  translation 0 -2.5 5
-  children [
-    Shape { 
-      appearance Appearance { 
-        texture ImageTexture { url [texturas/cemento.jpg] }
-      }
-      geometry Box { 
-        size 5 5 10
-      } 
-    }
-  ]
-}
-      

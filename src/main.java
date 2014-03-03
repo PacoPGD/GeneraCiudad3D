@@ -13,6 +13,8 @@ public class main {
 	static int tamanioCiudad;
 	static int callesHorizontal;
 	static int callesVertical;
+	static int minimoAltura;
+	static int maximoAltura;
 	static int matriz[][];
 
 
@@ -25,6 +27,7 @@ public class main {
 		construirCalles();
 		construirArboles();
 		construirIglesia();
+		construirCasas();
 		imprimirCiudad();
 		guardaFichero();
 		
@@ -48,12 +51,17 @@ public class main {
 		callesVertical = Integer.parseInt( JOptionPane.showInputDialog(
 				null,"Introduzca calles en vertical","GeneraCiudad3D",
 		    	JOptionPane.QUESTION_MESSAGE) );
+		minimoAltura = Integer.parseInt( JOptionPane.showInputDialog(
+				null,"Introduzca minimo de altura","GeneraCiudad3D",
+		    	JOptionPane.QUESTION_MESSAGE) );
+		maximoAltura = Integer.parseInt( JOptionPane.showInputDialog(
+				null,"Introduzca máximo de altura","GeneraCiudad3D",
+		    	JOptionPane.QUESTION_MESSAGE) );
 	}
 
 	
 	/***************************************************
 	Esta funcion construye la matriz de calles
-	
 	*************************************************/
 	public static void construirCalles()
 	{
@@ -111,6 +119,11 @@ public class main {
 		}
 	}
 	
+	
+	
+	/***************************************************
+	Esta función construye la iglesia de Chuck Norris en un espacio apropiado para ello
+	*************************************************/
 	public static void construirIglesia()
 	{
 		Random r=new Random();
@@ -122,12 +135,14 @@ public class main {
 		{
 			bandera = 0;
 			
+			//ESCOGER POSICION DE PARTIDA DE LA IGLESIA
 			do
 			{
 				auxiliar=r.nextInt(tamanioCiudad);
 				auxiliar2=r.nextInt(tamanioCiudad);
 			}while(matriz[auxiliar][auxiliar2]!=0);
 			
+			//COMPROBAR SI SE PUEDE INSERTAR IGLESIA
 			for(i=auxiliar;i<auxiliar+3 && i<tamanioCiudad;i++)
 			{
 				for(j=auxiliar2;j<auxiliar2+7 && j<tamanioCiudad;j++)
@@ -137,6 +152,7 @@ public class main {
 				}
 			}
 		
+			//SI SE PUEDE INSERTAR, HACERLO
 			if(bandera==21)
 			{
 				for(i=auxiliar;i<auxiliar+3  && i<tamanioCiudad;i++)
@@ -152,6 +168,93 @@ public class main {
 		}while(bandera!=21);
 	}
 	
+	/***************************************************
+	Esta funcion se genera varias casas
+	*************************************************/
+	public static void construirCasas()
+	{
+		Random r=new Random();
+		int intentos=100;
+		
+		do
+		{
+		//CONSTRUIR CASA EN EL RANGO DADO
+		if(construirCasa(minimoAltura+r.nextInt(maximoAltura-minimoAltura))==false)
+			intentos--;
+		else
+			intentos=100;
+		
+		}while(intentos>0);
+	}
+	
+	
+	/***************************************************
+	Esta funcion se construye una casa en el escenario
+	*************************************************/
+	public static boolean construirCasa(int tamanio)
+	{
+		Random r=new Random();
+	
+		int grandeza;//PARA VER CUANTOS BLOQUES CUADRADOS OCUPA LA CASA
+		int i,j;
+		int auxiliar,auxiliar2;
+		int bandera=0;
+		int intentos=10;
+		
+		grandeza = 2+r.nextInt(8);
+		do
+		{
+			bandera = 0;
+			
+			//ESCOGER POSICION DE PARTIDA DE LA CASA
+			do
+			{
+				auxiliar=r.nextInt(tamanioCiudad);
+				auxiliar2=r.nextInt(tamanioCiudad);
+			}while(matriz[auxiliar][auxiliar2]!=0);
+			
+			//COMPROBAR SI SE PUEDE INSERTAR CASA
+			for(i=auxiliar;i<auxiliar+grandeza && i<tamanioCiudad;i++)
+			{
+				for(j=auxiliar2;j<auxiliar2+grandeza && j<tamanioCiudad;j++)
+				{
+					if(matriz[i][j]==0)
+						bandera++;
+				}
+			}
+		
+			//SI SE PUEDE INSERTAR, HACERLO
+			if(bandera==grandeza*grandeza)
+			{
+				for(i=auxiliar;i<auxiliar+grandeza  && i<tamanioCiudad;i++)
+				{
+					for(j=auxiliar2;j<auxiliar2+grandeza && j<tamanioCiudad;j++)
+					{
+						matriz[i][j]=tamanio;
+					}
+			
+				}
+			}
+			else
+			{
+				intentos--;	
+			}
+			
+		}while(bandera!=(tamanio*tamanio) && intentos > 0);
+		
+		//SI SE HA INSERTADO LA CASA DEVOLVER TRUE Y SI NO SE INSERTA DEVOLVER FALSE
+		if(intentos==0)
+			return false;
+		else
+			return true;
+	}
+	
+	
+	
+	/***************************************************
+	Esta funcion se encarga de construir los arboles en la ciudad, estos se colocarán cuando tengamos huecos
+	de un recuadro de ancho
+	*************************************************/
 	public static void construirArboles()
 	{
 		int i,j;
@@ -164,12 +267,12 @@ public class main {
 					matriz[i][j]=3;
 				
 				if(matriz[i][j]==0 && matriz[i-1][j]>0 && matriz[i+1][j]>0)
-					matriz[i][j]=3;
-					
-			}
-			
+					matriz[i][j]=3;			
+			}	
 		}
 	}
+	
+
 	
 	/***************************************************
 	Esta funcion imprime la matriz de la ciudad
@@ -239,9 +342,9 @@ public class main {
 	
 	}
 	
+	
 	/***************************************************
 	La funcion escribeFichero escribe el fichero con los datos recogidos anteriormente
-	
 	*************************************************/
 	public static void escribeFichero(PrintWriter pw)
 	{
