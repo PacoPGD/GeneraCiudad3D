@@ -23,16 +23,37 @@ public class main {
 	public static void main(String[] args)
 	{
 		pedirDatos();
-		construirCalles();
-		construirArboles();
-		construirIglesia();
-		construirCasas();
+		construirCiudad();
 		imprimirCiudad();
 		guardaFichero();
 		
 		System.exit(0);
 	}
 
+	
+	/***************************************************
+	Esta funcion es la encargada de inicializar y construir la ciudad sobre la matriz
+	*************************************************/
+	public static void construirCiudad()
+	{
+		int i,j;
+		matriz= new int[tamanioCiudad][tamanioCiudad];
+		
+		//INICIALIZACION DE VARIABLES A 0
+		for(i=0;i<tamanioCiudad;i++)
+		{
+			for(j=0;j<tamanioCiudad;j++)
+			{
+				matriz[i][j]=0;
+			}
+		}
+		
+		construirCalles();
+		construirArboles();
+		construirIglesia();
+		construirCasas();
+	}
+	
 	
 	/***************************************************
 	La funcion guarda pedirDatos es la encargada de pedir al usuario la 
@@ -68,19 +89,12 @@ public class main {
 		int i,j;
 		int auxiliar;
 		int bandera[]= new int [tamanioCiudad];
-		
-		matriz= new int[tamanioCiudad][tamanioCiudad];
-		
-		//INICIALIZACION DE VARIABLES A 0
+
 		for(i=0;i<tamanioCiudad;i++)
 		{
-			for(j=0;j<tamanioCiudad;j++)
-			{
-				matriz[i][j]=0;
-			}
 			bandera[i]=0;
 		}
-
+		
 		//INTRODUCIMOS LAS CALLES EN HORIZONTAL
 		for(i=0;i<callesHorizontal;i++)
 		{
@@ -430,7 +444,7 @@ public class main {
 				{
 					for(k=0;k<matriz[i][j];k++)
 						pw.println("Transform{"
-								+ "translation "+ j +" "+k+" "+ i +" children[ Inline{ url \"figuras/bloque.wrl\"}]}");
+								+ "translation "+ j +" "+(k+0.5)+" "+ i +" children[ Inline{ url \"figuras/bloque.wrl\"}]}");
 				}
 			}	
 		
