@@ -1,4 +1,3 @@
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -348,7 +347,7 @@ public class main {
 	*************************************************/
 	public static void escribeFichero(PrintWriter pw)
 	{
-		int i,j;
+		int i,j,k;
 		int iglesia=0;
 		
 		pw.println("#VRML V2.0 utf8");
@@ -422,11 +421,25 @@ public class main {
 				}
 					
 			}
+			
+			//CASA
+	
+			for(j=0;j<tamanioCiudad;j++)
+			{
+				if(matriz[i][j]>4)
+				{
+					for(k=0;k<matriz[i][j];k++)
+						pw.println("Transform{"
+								+ "translation "+ j +" "+k+" "+ i +" children[ Inline{ url \"figuras/bloque.wrl\"}]}");
+				}
+			}	
+		
+			
 		}
 		
 
-		pw.println("Transform{"
-				+ "translation 0 10 0 children[ Inline{ url \"figuras/ejes.wrl\"}]}");
+		//pw.println("Transform{"
+		//		+ "translation 0 10 10 children[ Inline{ url \"figuras/ejes.wrl\"}]}");
 		
 
 		pw.println("Viewpoint {position "+ (tamanioCiudad/2) +" "+(tamanioCiudad*2)+" "+ (tamanioCiudad/2)+" orientation 1 0 0 -1.57 description \"arriba\"}");
