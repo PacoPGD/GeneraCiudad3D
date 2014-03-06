@@ -361,8 +361,10 @@ public class main {
 	*************************************************/
 	public static void escribeFichero(PrintWriter pw)
 	{
+		Random r=new Random();
 		int i,j,k;
 		int iglesia=0;
+		double proporcion=1;
 		
 		pw.println("#VRML V2.0 utf8");
 
@@ -437,14 +439,27 @@ public class main {
 			}
 			
 			//CASA
-	
 			for(j=0;j<tamanioCiudad;j++)
 			{
 				if(matriz[i][j]>4)
 				{
+					proporcion=1;
 					for(k=0;k<matriz[i][j];k++)
+					{
 						pw.println("Transform{"
-								+ "translation "+ j +" "+(k+0.5)+" "+ i +" children[ Inline{ url \"figuras/bloque.wrl\"}]}");
+								+ "scale "+proporcion+" 1 1 translation "+ j +" "+(k+0.5)+" "+ i +" children[ Inline{ url \"figuras/bloque.wrl\"}]}");
+						/*if(k%2==0)
+							proporcion=proporcion+r.nextFloat()*0.1;
+						else
+							proporcion=proporcion-r.nextFloat()*0.1;*/
+						if(k>1)
+						{
+							pw.println("Transform{"
+									+ "scale 0.5 0.5 0.5 translation "+ j +" "+(k+0.5)+" "+ (i-0.5) +" children[ Inline{ url \"figuras/ventana.wrl\"}]}");
+							pw.println("Transform{"
+									+ "scale 0.5 0.5 0.5 translation "+ j +" "+(k+0.5)+" "+ (i+0.5) +" children[ Inline{ url \"figuras/ventana.wrl\"}]}");
+						}
+					}
 				}
 			}	
 		

@@ -1,0 +1,16 @@
+#VRML V2.0 utf8
+
+Transform {
+	children [
+		Shape { 
+			appearance Appearance { 
+				material Material {transparency 0.2  }
+				texture ImageTexture { url [texturas/ventana.jpg] }
+			}
+			geometry Box { 
+				size 1 1 0.1
+			} 
+		}
+	]
+}
+

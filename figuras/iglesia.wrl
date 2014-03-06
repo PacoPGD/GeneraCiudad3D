@@ -109,36 +109,24 @@ Transform{
 		  ]
 		}	 	 
 
-		Transform {
-		  translation -2.5 0 0.6
-		  rotation 0.0 -1.0 0.0 1.5708 
-		  children [
-			Shape { 
-			  appearance Appearance { 
-				material Material {transparency 0.2  }
-				texture ImageTexture { url [texturas/ventana.jpg] }
-			  }
-			  geometry Box { 
-				size 1 1 0.1
-			  } 
-			}
-		  ]
+		Transform{
+			translation -2.5 0 0.6
+			rotation 0.0 -1.0 0.0 1.5708 
+			children[ 
+				Inline{ 
+					url ventana.wrl
+				}
+			]
 		}
 
-		Transform {
+		Transform{
 		  translation -2.5 0 -0.5
 		  rotation 0.0 -1.0 0.0 1.5708 
-		  children [
-			Shape { 
-			  appearance Appearance { 
-				material Material {transparency 0.2  }
-				texture ImageTexture { url [texturas/ventana.jpg] }
-			  }
-			  geometry Box { 
-				size 1 1 0.1
-			  } 
-			}
-		  ]
+			children[ 
+				Inline{ 
+					url ventana.wrl
+				}
+			]
 		}
 	
 	]
