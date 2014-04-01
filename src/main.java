@@ -51,6 +51,7 @@ public class main {
 		construirCalles();
 		construirArboles();
 		construirIglesia();
+		construirParque();
 		construirCasas();
 	}
 	
@@ -133,6 +134,53 @@ public class main {
 	}
 	
 	
+	
+	/***************************************************
+	Esta función construye la iglesia de Chuck Norris en un espacio apropiado para ello
+	*************************************************/
+	public static void construirParque()
+	{
+		Random r=new Random();
+		int i,j;
+		int auxiliar,auxiliar2;
+		int bandera=0;
+		
+		do
+		{
+			bandera = 0;
+			
+			//ESCOGER POSICION DE PARTIDA DE LA IGLESIA
+			do
+			{
+				auxiliar=r.nextInt(tamanioCiudad);
+				auxiliar2=r.nextInt(tamanioCiudad);
+			}while(matriz[auxiliar][auxiliar2]!=0);
+			
+			//COMPROBAR SI SE PUEDE INSERTAR IGLESIA
+			for(i=auxiliar;i<auxiliar+3 && i<tamanioCiudad;i++)
+			{
+				for(j=auxiliar2;j<auxiliar2+7 && j<tamanioCiudad;j++)
+				{
+					if(matriz[i][j]==0)
+						bandera++;
+				}
+			}
+		
+			//SI SE PUEDE INSERTAR, HACERLO
+			if(bandera==21)
+			{
+				for(i=auxiliar;i<auxiliar+3  && i<tamanioCiudad;i++)
+				{
+					for(j=auxiliar2;j<auxiliar2+7 && j<tamanioCiudad;j++)
+					{
+						matriz[i][j]=-1;
+					}
+			
+				}
+			}
+
+		}while(bandera!=21);
+	}	
 	
 	/***************************************************
 	Esta función construye la iglesia de Chuck Norris en un espacio apropiado para ello
@@ -310,7 +358,6 @@ public class main {
 	La funcion guarda fichero recoge toda la información del programa
 	y la transforma en un fichero wrl/x3d que después podrá ser visualizado
 	por el visor 3D
-	
 	*************************************************/
 	public static void guardaFichero()
 	{
